@@ -17,6 +17,7 @@ export const Container = styled.div`
 export const Menu = styled.div`
   position: relative;
   left: 0;
+
   width: 20vw;
   height: 100vh;
   background-color: lightgray;

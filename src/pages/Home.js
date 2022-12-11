@@ -1,4 +1,5 @@
 import React from "react";
+import GlobalStyle from "../GlobalStyle";
 import * as S from "./HomeStyle";
 import { BsEnvelope } from "react-icons/bs";
 
