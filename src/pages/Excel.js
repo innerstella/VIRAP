@@ -1,11 +1,19 @@
 import React from "react";
 import * as S from "./HomeStyle";
 import { BsEnvelope } from "react-icons/bs";
-
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-const Home = () => {
+import CopyPaste from "./CopyPaste";
+
+const Excel = () => {
   const navigate = useNavigate();
+
+  const [data, setData] = useState("");
+  const constructTableFromPasetedInput = (input) => {
+    setData(input.target.value);
+  };
+
   return (
     <>
       <S.Header>
@@ -28,18 +36,17 @@ const Home = () => {
           <p>결과 확인</p>
         </S.Menu>
         <S.Content>
-          <h4>기본 정보</h4>
-          <h3>위해성 평가란?</h3>
-          <img src="/img/home.png" alt="home" style={{ width: "300px" }} />
-          <p>
-            위해성(risk)=유해성(hazard)X노출량(exposure) 유해성: 유해물질의
-            독성, 노출량: 유해물질 접촉량
-          </p>
-          <button onClick={() => navigate("/excel")}>계산하러 가기</button>
+          <h4>엑셀에서 데이터를 붙여넣으세요.</h4>
+          <textarea
+            id="myDemoTextArea"
+            onChange={constructTableFromPasetedInput}
+            value={data}
+          ></textarea>
+          <CopyPaste data={data} />
         </S.Content>
       </S.Container>
     </>
   );
 };
 
-export default Home;
+export default Excel;
