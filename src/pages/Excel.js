@@ -36,13 +36,7 @@ const Excel = () => {
           <p>결과 확인</p>
         </S.Menu>
         <S.Content>
-          <h4>엑셀에서 데이터를 붙여넣으세요.</h4>
-          <textarea
-            id="myDemoTextArea"
-            onChange={constructTableFromPasetedInput}
-            value={data}
-          ></textarea>
-          <CopyPaste data={data} />
+          <CopyPaste />
         </S.Content>
       </S.Container>
     </>
