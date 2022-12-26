@@ -25,10 +25,10 @@ const Excel = () => {
       <S.Container>
         <S.Menu>
           <h3>기본 정보</h3>
-          <p>위해성 평가란?</p>
+          <p onClick={() => navigate("/")}>위해성 평가란?</p>
           <p>위해도 계산</p>
           <h3>Input</h3>
-          <p>오염원</p>
+          <p onClick={() => navigate("/contamination")}>오염원</p>
           <p>지질매체</p>
           <p>건물특성</p>
           <p>노출특성</p>
